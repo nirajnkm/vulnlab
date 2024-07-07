@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Register page</title>
+  <style>
+    /* Basic reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Container styling */
+.container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Centering the row content */
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Column styling */
+.col-sm-6 {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Margin-top for column */
+.mt-4 {
+    margin-top: 20px;
+}
+
+/* Heading styling */
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Label styling */
+label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Input styling */
+input.form-control {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Button styling */
+button.btn, a.btn {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+button.btn-dark {
+    background-color: #444;
+}
+
+button.btn-dark:hover {
+    background-color: #555;
+}
+
+a.btn-primary {
+    background-color: #1e90ff;
+}
+
+a.btn-primary:hover {
+    background-color: #1c86ee;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .col-sm-6 {
+        padding: 15px;
+    }
+
+    button.btn, a.btn {
+        margin: 5px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5em;
+    }
+
+    button.btn, a.btn {
+        padding: 6px 12px;
+    }
+}
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+    <div class=" row justify-content-center">
+        <div class="col-sm-6 mt-4">
+            <h2>Register form</h2>
+            <form action="/register" method="POST">
+                <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+                </div>
+                
+                <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                </div>
+
+                <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+                </div>
+                <input type="hidden" name="role" value="user" disabled>
+
+                <button type="submit" class="btn btn-dark">Submit</button>
+                <a href="/login" class="btn btn-primary">Login</a>
+                <p>{{error}}</p>
+            </form>
+        </div>
+    </div>
+  
+</div>
+
+</body>
+</html>
